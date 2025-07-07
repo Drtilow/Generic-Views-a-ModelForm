@@ -1,0 +1,13 @@
+<h1>Seznam bund</h1>
+<a href="{% url 'jacket_add' %}">➕ Přidat bundu</a>
+<ul>
+  {% for jacket in jackets %}
+    <li>
+      <a href="{% url 'jacket_detail' jacket.pk %}">
+        {{ jacket.brand }} ({{ jacket.color }})
+      </a>
+    </li>
+  {% empty %}
+    <li>Žádné bundy</li>
+  {% endfor %}
+</ul>
